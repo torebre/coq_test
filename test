@@ -1,0 +1,16 @@
+Definition h (n : nat) : nat -> nat := fun m => n + m * 2.
+
+
+About h.
+
+Definition g (n : nat) (m : nat) : nat := n + m * 2.
+
+About g.
+
+Definition repeat_twice (g : nat -> nat) : nat -> nat := 
+fun x => g (g x).
+
+
+Definition f (n : nat) : nat := n + 1.
+
+Eval compute in repeat_twice f 2.
