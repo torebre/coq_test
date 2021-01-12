@@ -1,0 +1,12 @@
+From mathcomp Require Import all_ssreflect.
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+Definition f (n : nat) : nat := n + 1.
+
+Check fun n => f n.+1.
+
+Definition predn n := if n is p.+1 then p else n.
+
+Eval compute in predn 5.
