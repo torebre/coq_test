@@ -1,0 +1,22 @@
+From mathcomp Require Import all_ssreflect.
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+
+Inductive triple (A B C : Type) : Type := mk_triple (a : A) (b : B) (c : C).
+
+
+Definition fst A B C (p : triple A B C) := let (a, _, _) := p in a.
+Definition snd A B C (p: triple A B C) := let (_, b, _) := p in b.
+Definition thrd A B C (p: triple A B C) := let (_, _, c) := p in c.
+
+Notation "( a , b , c )" := (mk_triple a b c).
+
+Notation "p .1" := (fst p). (* (at level 2). *)
+Notation "p .2" := (snd p). (* (at level 2). *)
+Notation "p .3" := (thrd p) (at level 2).
+
+Eval compute in (4, 5, 8).1.
+Eval compute in (true, false, 1).2.
+Eval compute in (2, true, false).

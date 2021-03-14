@@ -1,0 +1,27 @@
+From mathcomp Require Import all_ssreflect.
+Set Implicit Arguments.
+Unset Strict Implicit.
+Unset Printing Implicit Defensive.
+
+
+Inductive pair (A B : Type) : Type := mk_pair (a : A) (b : B).
+Notation "( a , b )" := (mk_pair a b).
+Notation "A * B" := (pair A B).
+
+About mk_pair.
+
+Check Type.
+
+Check (4, 5).
+
+Definition fst A B (p : pair A B) :=
+  match p with mk_pair x _ => x end.
+
+(* Definition fst A B (p : pair A B) := let (a, _) := p in a.
+Notation "p .1" := (fst p) (at level 2). *)
+
+Eval compute in (4, 5).1.
+
+Check (3, false).
+
+About fst.
