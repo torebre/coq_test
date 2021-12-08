@@ -1,0 +1,10 @@
+Section Minimal_propsitional_logic.
+
+Variables P Q R T : Prop.
+
+Theorem imp_trans : (P -> Q) -> (Q -> R) -> P -> R.
+Proof.
+auto.
+Qed.
+
+Print imp_trans.

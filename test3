@@ -1,0 +1,7 @@
+Require Export BinNums.
+
+Open Scope Z_scope.
+
+Definition Zsqr (z:Z) : Z := z*z.
+
+Definition my_fun (f:z->Z) : Z : f (f z).
