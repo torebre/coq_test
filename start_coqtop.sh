@@ -1,1 +1,1 @@
-docker run -it --rm -v $1:/project mathcomp/mathcomp:1.12.0-coq-8.13 coqtop
+podman run -it --rm -v $1:/project mathcomp/mathcomp:1.15.0-coq-8.16 coqtop
